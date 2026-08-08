@@ -3,52 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar - FamíliaKut</title>
-    <link rel="stylesheet" href="style.css">
+    <title>[NOME DA SUA MARCA] - Produtos de Sublimação</title>
+    <style>
+        /* Variáveis de Cores - Você pode alterar o tema aqui */
+        :root {
+            --cor-primaria: #2c3e50;
+            --cor-secundaria: #e74c3c;
+            --cor-fundo: #f8f9fa;
+            --cor-texto: #333333;
+            --cor-branco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--cor-branco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 100px 5% 50px;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--cor-primaria);
+        }
+
+        /* Seção Início */
+        #inicio {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('[URL_DA_SUA_IMAGEM_DE_FUNDO]') center/cover;
+            color: var(--cor-branco);
+        }
+
+        #inicio h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        #inicio p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            background-color: var(--cor-secundaria);
+            color: var(--cor-branco);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Seção Produtos/Trabalho */
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card-produto {
+            background-color: var(--cor-branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card-produto:hover {
+            transform: translateY(-10px);
+        }
+
+        .img-produto {
+            width: 100%;
+            height: 250px;
+            background-color: #ddd; /* Fundo temporário enquanto não há imagem */
+            object-fit: cover;
+        }
+
+        .info-produto {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Seção Contato */
+        #contato {
+            background-color: var(--cor-branco);
+        }
+
+        .container-contato {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-contato {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+
+        .info-contato a {
+            color: var(--cor-secundaria);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Em um projeto maior, você pode adicionar um menu hambúrguer aqui */
+            }
+            #inicio h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-login">
+<body>
 
-    <div class="login-container">
-        <div class="login-left">
-            <h1 class="logo-grande">FamíliaKut</h1>
-            <p><strong>Conecte-se com a sua família (sem brigas de política, por favor).</strong></p>
-            <ul class="login-lista">
-                <li>Compartilhe as fotos do almoço de domingo.</li>
-                <li>Deixe depoimentos para a sua avó.</li>
-                <li>Participe da comunidade "Eu amo pavê".</li>
+    <!-- Cabeçalho / Menu -->
+    <header>
+        <div class="logo">[SUA LOGO / SEU NOME]</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Meu Trabalho</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
-        </div>
+        </nav>
+    </header>
 
-        <div class="login-right">
+    <!-- Seção Início -->
+    <section id="inicio">
+        <h1>Produtos Personalizados</h1>
+        <p>[PREENCHER: Escreva aqui um breve texto sobre a qualidade do seu trabalho de sublimação, como canecas, camisas, etc.]</p>
+        <a href="#produtos" class="btn">Ver Produtos</a>
+    </section>
+
+    <!-- Seção Produtos -->
+    <section id="produtos">
+        <h2 class="section-title">Meu Trabalho</h2>
+        
+        <div class="grid-produtos">
             
-            <div id="formLogin">
-                <h2>Acesse sua conta</h2>
-                <br>
-                <input type="email" placeholder="Seu e-mail" class="input-padrao">
-                <input type="password" placeholder="Sua senha" class="input-padrao">
-                <button class="btn-primario" onclick="entrar()">Entrar</button>
-                
-                <p class="link-troca">
-                    <a href="#" onclick="alternarFormulario('cadastro')">Ainda não tem conta? Cadastre-se aqui.</a>
-                </p>
+            <!-- Produto 1 -->
+            <div class="card-produto">
+                <img src="" alt="[DESCRIÇÃO DA IMAGEM]" class="img-produto">
+                <div class="info-produto">
+                    <h3>[NOME DO PRODUTO 1]</h3>
+                    <p>[PREENCHER: Breve descrição, ex: Canecas de porcelana personalizadas]</p>
+                </div>
             </div>
 
-            <div id="formCadastro" style="display: none;">
-                <h2>Crie seu perfil</h2>
-                <br>
-                <input type="text" placeholder="Nome completo" class="input-padrao">
-                <input type="email" placeholder="E-mail" class="input-padrao">
-                <input type="password" placeholder="Crie uma senha" class="input-padrao">
-                <button class="btn-primario" onclick="cadastrar()">Criar Conta</button>
-                
-                <p class="link-troca">
-                    <a href="#" onclick="alternarFormulario('login')">Já tem uma conta? Entre aqui.</a>
-                </p>
+            <!-- Produto 2 -->
+            <div class="card-produto">
+                <img src="" alt="[DESCRIÇÃO DA IMAGEM]" class="img-produto">
+                <div class="info-produto">
+                    <h3>[NOME DO PRODUTO 2]</h3>
+                    <p>[PREENCHER: Breve descrição, ex: Camisetas 100% poliéster]</p>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="card-produto">
+                <img src="" alt="[DESCRIÇÃO DA IMAGEM]" class="img-produto">
+                <div class="info-produto">
+                    <h3>[NOME DO PRODUTO 3]</h3>
+                    <p>[PREENCHER: Breve descrição, ex: Squeezes, azulejos, etc.]</p>
+                </div>
             </div>
 
         </div>
-    </div>
+    </section>
 
-    <script src="login.js"></script>
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2 class="section-title">Fale Comigo</h2>
+        <div class="container-contato">
+            <p>[PREENCHER: Texto convidando o cliente para fazer um orçamento sem compromisso.]</p>
+            
+            <div class="info-contato">
+                <p><strong>WhatsApp:</strong> <a href="[LINK_DO_SEU_WHATSAPP]" target="_blank">[SEU NÚMERO AQUI]</a></p>
+                <p><strong>Instagram:</strong> <a href="[LINK_DO_SEU_INSTAGRAM]" target="_blank">[SEU @ AQUI]</a></p>
+                <p><strong>E-mail:</strong> <a href="mailto:[SEU_EMAIL]">[SEU EMAIL AQUI]</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 [SEU NOME / SUA EMPRESA]. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 </html>
